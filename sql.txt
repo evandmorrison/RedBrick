@@ -1,0 +1,7 @@
+A)
+SELECT Salesperson.Name FROM Salesperson
+where salesperson.SalespersonID IN 
+(Select Orders.SalespersonID from Orders 
+                        inner join Customer 
+                        ON customer.CustomerID = orders.CustomerID
+                        AND customer.Name = 'George');
